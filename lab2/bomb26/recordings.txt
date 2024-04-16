@@ -1,0 +1,608 @@
+jovyan@jupyter-10225501447:~$ cd lab2
+jovyan@jupyter-10225501447:~/lab2$ cd bomb26
+jovyan@jupyter-10225501447:~/lab2/bomb26$ gdb bomb
+GNU gdb (Ubuntu 12.1-0ubuntu1~22.04) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from bomb...
+(gdb) b explode_bomb 
+Breakpoint 1 at 0x2e23
+(gdb) r
+Starting program: /home/jovyan/lab2/bomb26/bomb 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Border relations with Canada have never been better.
+Phase 1 defused. How about the next one?
+1 2 4 7 11 16
+That's number 2.  Keep going!
+2 694
+Halfway there!
+108 2
+So you got that one.  Try this one.
+444444
+
+Breakpoint 1, 0x0000555555556e23 in explode_bomb ()
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 130] will be killed.
+
+Quit anyway? (y or n) y
+jovyan@jupyter-10225501447:~/lab2/bomb26$ gdb bomb
+GNU gdb (Ubuntu 12.1-0ubuntu1~22.04) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from bomb...
+(gdb) b explode_bomb 
+Breakpoint 1 at 0x2e23
+(gdb) r
+Starting program: /home/jovyan/lab2/bomb26/bomb 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Border relations with Canada have never been better.
+Phase 1 defused. How about the next one?
+1 2 4 7 11 16
+That's number 2.  Keep going!
+2 694
+Halfway there!
+108 2
+So you got that one.  Try this one.
+555333
+
+Breakpoint 1, 0x0000555555556e23 in explode_bomb ()
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 156] will be killed.
+
+Quit anyway? (y or n) y
+jovyan@jupyter-10225501447:~/lab2/bomb26$ gdb bomb
+GNU gdb (Ubuntu 12.1-0ubuntu1~22.04) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from bomb...
+(gdb) b explode_bomb 
+Breakpoint 1 at 0x2e23
+(gdb) r
+Starting program: /home/jovyan/lab2/bomb26/bomb 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Border relations with Canada have never been better.
+Phase 1 defused. How about the next one?
+1 2 4 7 11 16
+That's number 2.  Keep going!
+2 694
+Halfway there!
+108 2
+So you got that one.  Try this one.
+5 115
+Good work!  On to the next...
+2 1 6 4 5 3
+
+Breakpoint 1, 0x0000555555556e23 in explode_bomb ()
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 268] will be killed.
+
+Quit anyway? (y or n) y
+jovyan@jupyter-10225501447:~/lab2/bomb26$ gdb bomb
+GNU gdb (Ubuntu 12.1-0ubuntu1~22.04) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from bomb...
+(gdb) b explode_bomb 
+Breakpoint 1 at 0x2e23
+(gdb) r
+Starting program: /home/jovyan/lab2/bomb26/bomb 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Border relations with Canada have never been better.
+Phase 1 defused. How about the next one?
+1 2 4 7 11 16
+That's number 2.  Keep going!
+2 694
+Halfway there!
+108 2
+So you got that one.  Try this one.
+5 115
+Good work!  On to the next...
+3 1 6 2 5 4
+
+Breakpoint 1, 0x0000555555556e23 in explode_bomb ()
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 307] will be killed.
+
+Quit anyway? (y or n) y
+jovyan@jupyter-10225501447:~/lab2/bomb26$ gdb bomb
+GNU gdb (Ubuntu 12.1-0ubuntu1~22.04) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from bomb...
+(gdb) b explode_bomb 
+Breakpoint 1 at 0x2e23
+(gdb) r
+Starting program: /home/jovyan/lab2/bomb26/bomb 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Border relations with Canada have never been better.
+Phase 1 defused. How about the next one?
+1 2 4 7 11 16
+That's number 2.  Keep going!
+2 694
+Halfway there!
+108 2
+So you got that one.  Try this one.
+5 115
+Good work!  On to the next...
+3 1 6 4 2 5
+
+Breakpoint 1, 0x0000555555556e23 in explode_bomb ()
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 335] will be killed.
+
+Quit anyway? (y or n) y
+jovyan@jupyter-10225501447:~/lab2/bomb26$ gdb bomb
+GNU gdb (Ubuntu 12.1-0ubuntu1~22.04) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from bomb...
+(gdb) p (char*)0x48e5
+$1 = 0x48e5 <error: Cannot access memory at address 0x48e5>
+(gdb) b phase_6
+Breakpoint 1 at 0x28bf
+(gdb) b explode_bomb 
+Breakpoint 2 at 0x2e23
+(gdb) r
+Starting program: /home/jovyan/lab2/bomb26/bomb 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Border relations with Canada have never been better.
+Phase 1 defused. How about the next one?
+1 2 4 7 11 16
+That's number 2.  Keep going!
+2 694
+Halfway there!
+108 2
+So you got that one.  Try this one.
+5 115
+Good work!  On to the next...
+2 1 3 4 5 6
+
+Breakpoint 1, 0x00005555555568bf in phase_6 ()
+(gdb) p (char*)0x48e5
+$2 = 0x48e5 <error: Cannot access memory at address 0x48e5>
+(gdb) x/s $rdi
+0x55555555b8b0 <input_strings+400>:     "2 1 3 4 5 6"
+(gdb) x/s $rsi
+0x3520342033203120:     <error: Cannot access memory at address 0x3520342033203120>
+(gdb) x/s $rdx
+0x55555555b8b0 <input_strings+400>:     "2 1 3 4 5 6"
+(gdb) x/s $rsp
+0x7fffffffdc48: "\303eUUUU"
+(gdb) x/s $rbx
+0x0:    <error: Cannot access memory at address 0x0>
+(gdb) x/s $edi
+0x5555b8b0:     <error: Cannot access memory at address 0x5555b8b0>
+(gdb) x/32wx $rsp-0x20
+0x7fffffffdc28: 0x55556ee6      0x00005555      0xffffdd68      0x00007fff
+0x7fffffffdc38: 0x00000000      0x00000000      0x00000001      0x00000000
+0x7fffffffdc48: 0x555565c3      0x00005555      0x00000000      0x00000000
+0x7fffffffdc58: 0xf7db8d90      0x00007fff      0x00000000      0x00000000
+0x7fffffffdc68: 0x555564c9      0x00005555      0x00000000      0x00000001
+0x7fffffffdc78: 0xffffdd68      0x00007fff      0x00000000      0x00000000
+0x7fffffffdc88: 0x8b6e059c      0x6d965006      0xffffdd68      0x00007fff
+0x7fffffffdc98: 0x555564c9      0x00005555      0x5555ace0      0x00005555
+(gdb) x/32wx $rip-0x48e5
+0x555555551fda: Cannot access memory at address 0x555555551fda
+(gdb) x/32wx $rsp-0x58
+0x7fffffffdbf0: 0xffffdd68      0x00007fff      0x5555b8b0      0x00005555
+0x7fffffffdc00: 0x5555b720      0x00005555      0x55556d23      0x00005555
+0x7fffffffdc10: 0x00000001      0x00000000      0x00000000      0x00000000
+0x7fffffffdc20: 0x00000001      0x00000000      0x55556ee6      0x00005555
+0x7fffffffdc30: 0xffffdd68      0x00007fff      0x00000000      0x00000000
+0x7fffffffdc40: 0x00000001      0x00000000      0x555565c3      0x00005555
+0x7fffffffdc50: 0x00000000      0x00000000      0xf7db8d90      0x00007fff
+0x7fffffffdc60: 0x00000000      0x00000000      0x555564c9      0x00005555
+(gdb) x/32wx $rdx-0x8
+0x55555555b8a8 <input_strings+392>:     0x00000000      0x00000000      0x20312032      0x20342033
+0x55555555b8b8 <input_strings+408>:     0x00362035      0x00000000      0x00000000      0x00000000
+0x55555555b8c8 <input_strings+424>:     0x00000000      0x00000000      0x00000000      0x00000000
+0x55555555b8d8 <input_strings+440>:     0x00000000      0x00000000      0x00000000      0x00000000
+0x55555555b8e8 <input_strings+456>:     0x00000000      0x00000000      0x00000000      0x00000000
+0x55555555b8f8 <input_strings+472>:     0x00000000      0x00000000      0x00000000      0x00000000
+0x55555555b908 <input_strings+488>:     0x00000000      0x00000000      0x00000000      0x00000000
+0x55555555b918 <input_strings+504>:     0x00000000      0x00000000      0x00000000      0x00000000
+(gdb) x/32wx $rdx-0x48e5
+0x555555556fcb <read_line+289>: 0x657461bf      0x2a2a2a64      0x34894800      0x7c894802
+0x555555556fdb <read_line+305>: 0x41e80802      0xf3fffffe      0x48fa1e0f      0x6478ec83
+0x555555556feb <phase_defused+9>:       0x25048b48      0x00000028      0x24448948      0xbfc03168
+0x555555556ffb <phase_defused+25>:      0x00000001      0xfffd2de8      0x053d83ff      0x06000047
+0x55555555700b <phase_defused+41>:      0x8b481974      0x64682444      0x25042b48      0x00000028
+0x55555555701b <phase_defused+57>:      0x0084850f      0x83480000      0x48c378c4      0x0c244c8d
+0x55555555702b <phase_defused+73>:      0x24548d48      0x448d4c08      0x8d481024      0x00145335
+0x55555555703b <phase_defused+89>:      0x3d8d4800      0x000047cd      0x000000b8      0xf2e3e800
+(gdb) x/32wx $rdx+0x48e5
+0x555555560195: 0x00000000      0x00000000      0x00000000      0x00000000
+0x5555555601a5: 0x00000000      0x00000000      0x00000000      0x00000000
+0x5555555601b5: 0x00000000      0x00000000      0x00000000      0x00000000
+0x5555555601c5: 0x00000000      0x00000000      0x00000000      0x00000000
+0x5555555601d5: 0x00000000      0x00000000      0x00000000      0x00000000
+0x5555555601e5: 0x00000000      0x00000000      0x00000000      0x00000000
+0x5555555601f5: 0x00000000      0x00000000      0x00000000      0x00000000
+0x555555560205: 0x00000000      0x00000000      0x00000000      0x00000000
+(gdb) x/32wx $rsp-0x20
+0x7fffffffdc28: 0x55556ee6      0x00005555      0xffffdd68      0x00007fff
+0x7fffffffdc38: 0x00000000      0x00000000      0x00000001      0x00000000
+0x7fffffffdc48: 0x555565c3      0x00005555      0x00000000      0x00000000
+0x7fffffffdc58: 0xf7db8d90      0x00007fff      0x00000000      0x00000000
+0x7fffffffdc68: 0x555564c9      0x00005555      0x00000000      0x00000001
+0x7fffffffdc78: 0xffffdd68      0x00007fff      0x00000000      0x00000000
+0x7fffffffdc88: 0x8b6e059c      0x6d965006      0xffffdd68      0x00007fff
+0x7fffffffdc98: 0x555564c9      0x00005555      0x5555ace0      0x00005555
+(gdb) x/32wx $rsp+0x20
+0x7fffffffdc68: 0x555564c9      0x00005555      0x00000000      0x00000001
+0x7fffffffdc78: 0xffffdd68      0x00007fff      0x00000000      0x00000000
+0x7fffffffdc88: 0x8b6e059c      0x6d965006      0xffffdd68      0x00007fff
+0x7fffffffdc98: 0x555564c9      0x00005555      0x5555ace0      0x00005555
+0x7fffffffdca8: 0xf7ffd040      0x00007fff      0x33ac059c      0x9269aff9
+0x7fffffffdcb8: 0x91e4059c      0x9269bfb1      0x00000000      0x00007fff
+0x7fffffffdcc8: 0x00000000      0x00000000      0x00000000      0x00000000
+0x7fffffffdcd8: 0x00000000      0x00000000      0x00000000      0x00000000
+(gdb) x/32wx $ebp+0x578
+0x579:  Cannot access memory at address 0x579
+(gdb) x/32wx $ebx+0x578
+0x578:  Cannot access memory at address 0x578
+(gdb) x/32wx $ebx
+0x0:    Cannot access memory at address 0x0
+(gdb) x/32wx $rip+0x48e5
+0x55555555b1a4 <n22+20>:        0x00005555      0x00000000      0x00000000      0x00000016
+0x55555555b1b4 <n32+4>: 0x00000000      0x5555b0b0      0x00005555      0x5555b070
+0x55555555b1c4 <n32+20>:        0x00005555      0x00000000      0x00000000      0x0000002d
+0x55555555b1d4 <n33+4>: 0x00000000      0x5555b010      0x00005555      0x5555b0d0
+0x55555555b1e4 <n33+20>:        0x00005555      0x00000000      0x00000000      0x00000006
+0x55555555b1f4 <n31+4>: 0x00000000      0x5555b030      0x00005555      0x5555b090
+0x55555555b204 <n31+20>:        0x00005555      0x00000000      0x00000000      0x0000006b
+0x55555555b214 <n34+4>: 0x00000000      0x5555b050      0x00005555      0x5555b0f0
+(gdb) x/32wx $rip+0x48
+0x555555556907 <phase_6+72>:    0x45399c04      0xe8ee7500      0x00000510      0x8349e7eb
+0x555555556917 <phase_6+88>:    0x834901c6      0x894c04c5      0x458b41ed      0x01e88300
+0x555555556927 <phase_6+104>:   0x7705f883      0xfe8341c9      0x4c057f05      0xceebf389
+0x555555556937 <phase_6+120>:   0x000000be      0xb40c8b00      0x000001b8      0x158d4800
+0x555555556947 <phase_6+136>:   0x000048e5      0x7e01f983      0x528b480b      0x01c08308
+0x555555556957 <phase_6+152>:   0xf575c839      0xf4548948      0xc6834820      0xfe834801
+0x555555556967 <phase_6+168>:   0x48d27506      0x20245c8b      0x24448b48      0x43894828
+0x555555556977 <phase_6+184>:   0x548b4808      0x89483024      0x8b480850      0x48382444
+(gdb) disassemble phase_6
+Dump of assembler code for function phase_6:
+=> 0x00005555555568bf <+0>:     endbr64 
+   0x00005555555568c3 <+4>:     push   %r14
+   0x00005555555568c5 <+6>:     push   %r13
+   0x00005555555568c7 <+8>:     push   %r12
+   0x00005555555568c9 <+10>:    push   %rbp
+   0x00005555555568ca <+11>:    push   %rbx
+   0x00005555555568cb <+12>:    sub    $0x60,%rsp
+   0x00005555555568cf <+16>:    mov    %fs:0x28,%rax
+   0x00005555555568d8 <+25>:    mov    %rax,0x58(%rsp)
+   0x00005555555568dd <+30>:    xor    %eax,%eax
+   0x00005555555568df <+32>:    mov    %rsp,%r13
+   0x00005555555568e2 <+35>:    mov    %r13,%rsi
+   0x00005555555568e5 <+38>:    call   0x555555556e65 <read_six_numbers>
+   0x00005555555568ea <+43>:    mov    $0x1,%r14d
+   0x00005555555568f0 <+49>:    mov    %rsp,%r12
+   0x00005555555568f3 <+52>:    jmp    0x55555555691d <phase_6+94>
+   0x00005555555568f5 <+54>:    call   0x555555556e23 <explode_bomb>
+   0x00005555555568fa <+59>:    jmp    0x55555555692c <phase_6+109>
+   0x00005555555568fc <+61>:    add    $0x1,%rbx
+   0x0000555555556900 <+65>:    cmp    $0x5,%ebx
+   0x0000555555556903 <+68>:    jg     0x555555556915 <phase_6+86>
+   0x0000555555556905 <+70>:    mov    (%r12,%rbx,4),%eax
+   0x0000555555556909 <+74>:    cmp    %eax,0x0(%rbp)
+   0x000055555555690c <+77>:    jne    0x5555555568fc <phase_6+61>
+   0x000055555555690e <+79>:    call   0x555555556e23 <explode_bomb>
+   0x0000555555556913 <+84>:    jmp    0x5555555568fc <phase_6+61>
+   0x0000555555556915 <+86>:    add    $0x1,%r14
+   0x0000555555556919 <+90>:    add    $0x4,%r13
+   0x000055555555691d <+94>:    mov    %r13,%rbp
+   0x0000555555556920 <+97>:    mov    0x0(%r13),%eax
+   0x0000555555556924 <+101>:   sub    $0x1,%eax
+   0x0000555555556927 <+104>:   cmp    $0x5,%eax
+   0x000055555555692a <+107>:   ja     0x5555555568f5 <phase_6+54>
+   0x000055555555692c <+109>:   cmp    $0x5,%r14d
+   0x0000555555556930 <+113>:   jg     0x555555556937 <phase_6+120>
+   0x0000555555556932 <+115>:   mov    %r14,%rbx
+   0x0000555555556935 <+118>:   jmp    0x555555556905 <phase_6+70>
+   0x0000555555556937 <+120>:   mov    $0x0,%esi
+   0x000055555555693c <+125>:   mov    (%rsp,%rsi,4),%ecx
+   0x000055555555693f <+128>:   mov    $0x1,%eax
+   0x0000555555556944 <+133>:   lea    0x48e5(%rip),%rdx        # 0x55555555b230 <node1>
+   0x000055555555694b <+140>:   cmp    $0x1,%ecx
+--Type <RET> for more, q to quit, c to continue without paging--c
+   0x000055555555694e <+143>:   jle    0x55555555695b <phase_6+156>
+   0x0000555555556950 <+145>:   mov    0x8(%rdx),%rdx
+   0x0000555555556954 <+149>:   add    $0x1,%eax
+   0x0000555555556957 <+152>:   cmp    %ecx,%eax
+   0x0000555555556959 <+154>:   jne    0x555555556950 <phase_6+145>
+   0x000055555555695b <+156>:   mov    %rdx,0x20(%rsp,%rsi,8)
+   0x0000555555556960 <+161>:   add    $0x1,%rsi
+   0x0000555555556964 <+165>:   cmp    $0x6,%rsi
+   0x0000555555556968 <+169>:   jne    0x55555555693c <phase_6+125>
+   0x000055555555696a <+171>:   mov    0x20(%rsp),%rbx
+   0x000055555555696f <+176>:   mov    0x28(%rsp),%rax
+   0x0000555555556974 <+181>:   mov    %rax,0x8(%rbx)
+   0x0000555555556978 <+185>:   mov    0x30(%rsp),%rdx
+   0x000055555555697d <+190>:   mov    %rdx,0x8(%rax)
+   0x0000555555556981 <+194>:   mov    0x38(%rsp),%rax
+   0x0000555555556986 <+199>:   mov    %rax,0x8(%rdx)
+   0x000055555555698a <+203>:   mov    0x40(%rsp),%rdx
+   0x000055555555698f <+208>:   mov    %rdx,0x8(%rax)
+   0x0000555555556993 <+212>:   mov    0x48(%rsp),%rax
+   0x0000555555556998 <+217>:   mov    %rax,0x8(%rdx)
+   0x000055555555699c <+221>:   movq   $0x0,0x8(%rax)
+   0x00005555555569a4 <+229>:   mov    $0x5,%ebp
+   0x00005555555569a9 <+234>:   jmp    0x5555555569b4 <phase_6+245>
+   0x00005555555569ab <+236>:   mov    0x8(%rbx),%rbx
+   0x00005555555569af <+240>:   sub    $0x1,%ebp
+   0x00005555555569b2 <+243>:   je     0x5555555569c5 <phase_6+262>
+   0x00005555555569b4 <+245>:   mov    0x8(%rbx),%rax
+   0x00005555555569b8 <+249>:   mov    (%rax),%eax
+   0x00005555555569ba <+251>:   cmp    %eax,(%rbx)
+   0x00005555555569bc <+253>:   jge    0x5555555569ab <phase_6+236>
+   0x00005555555569be <+255>:   call   0x555555556e23 <explode_bomb>
+   0x00005555555569c3 <+260>:   jmp    0x5555555569ab <phase_6+236>
+   0x00005555555569c5 <+262>:   mov    0x58(%rsp),%rax
+   0x00005555555569ca <+267>:   sub    %fs:0x28,%rax
+   0x00005555555569d3 <+276>:   jne    0x5555555569e2 <phase_6+291>
+   0x00005555555569d5 <+278>:   add    $0x60,%rsp
+   0x00005555555569d9 <+282>:   pop    %rbx
+   0x00005555555569da <+283>:   pop    %rbp
+   0x00005555555569db <+284>:   pop    %r12
+   0x00005555555569dd <+286>:   pop    %r13
+   0x00005555555569df <+288>:   pop    %r14
+   0x00005555555569e1 <+290>:   ret    
+   0x00005555555569e2 <+291>:   call   0x555555556280 <__stack_chk_fail@plt>
+End of assembler dump.
+(gdb) x/20xw 0x55555555b230
+0x55555555b230 <node1>: 0x00000261      0x00000001      0x5555b240      0x00005555
+0x55555555b240 <node2>: 0x000001d4      0x00000002      0x5555b250      0x00005555
+0x55555555b250 <node3>: 0x000000f8      0x00000003      0x5555b260      0x00005555
+0x55555555b260 <node4>: 0x00000272      0x00000004      0x5555b270      0x00005555
+0x55555555b270 <node5>: 0x00000154      0x00000005      0x5555b110      0x00005555
+(gdb) x/24xw 0x55555555b230
+0x55555555b230 <node1>: 0x00000261      0x00000001      0x5555b240      0x00005555
+0x55555555b240 <node2>: 0x000001d4      0x00000002      0x5555b250      0x00005555
+0x55555555b250 <node3>: 0x000000f8      0x00000003      0x5555b260      0x00005555
+0x55555555b260 <node4>: 0x00000272      0x00000004      0x5555b270      0x00005555
+0x55555555b270 <node5>: 0x00000154      0x00000005      0x5555b110      0x00005555
+0x55555555b280 <host_table>:    0x5555849f      0x00005555      0x555584af      0x00005555
+(gdb) x/4xw 0x55555555b110
+0x55555555b110 <node6>: 0x0000012d      0x00000006      0x00000000      0x00000000
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 359] will be killed.
+
+Quit anyway? (y or n) y
+jovyan@jupyter-10225501447:~/lab2/bomb26$ gdb bomb
+GNU gdb (Ubuntu 12.1-0ubuntu1~22.04) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from bomb...
+(gdb) b explode_bomb 
+Breakpoint 1 at 0x2e23
+(gdb) r
+Starting program: /home/jovyan/lab2/bomb26/bomb 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Border relations with Canada have never been better.
+Phase 1 defused. How about the next one?
+1 2 4 7 11 16
+That's number 2.  Keep going!
+2 694
+Halfway there!
+108 2
+So you got that one.  Try this one.
+5 115
+Good work!  On to the next...
+3 6 5 2 1 4
+
+Breakpoint 1, 0x0000555555556e23 in explode_bomb ()
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 518] will be killed.
+
+Quit anyway? (y or n) y
+jovyan@jupyter-10225501447:~/lab2/bomb26$ gdb bomb
+GNU gdb (Ubuntu 12.1-0ubuntu1~22.04) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from bomb...
+(gdb) b explode_bomb 
+Breakpoint 1 at 0x2e23
+(gdb) r
+Starting program: /home/jovyan/lab2/bomb26/bomb 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Border relations with Canada have never been better.
+Phase 1 defused. How about the next one?
+1 2 4 7 11 16
+That's number 2.  Keep going!
+2 694
+Halfway there!
+108 2
+So you got that one.  Try this one.
+5 115
+Good work!  On to the next...
+4 1 2 5 6 3
+Congratulations! You've defused the bomb!
+Your instructor has been notified and will verify your solution.
+[Inferior 1 (process 534) exited normally]
+(gdb) i b
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000555555556e23 <explode_bomb>
+(gdb) r
+Starting program: /home/jovyan/lab2/bomb26/bomb 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Border relations with Canada have never been better.
+Phase 1 defused. How about the next one?
+1 2 4 7 11 16
+That's number 2.  Keep going!
+2 694
+Halfway there!
+108 2
+So you got that one.  Try this one.
+5 115
+Good work!  On to the next...
+4 1 2 5 6 3
+Congratulations! You've defused the bomb!
+Your instructor has been notified and will verify your solution.
+[Inferior 1 (process 542) exited normally]
+(gdb) r
+Starting program: /home/jovyan/lab2/bomb26/bomb 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Border relations with Canada have never been better.
+Phase 1 defused. How about the next one?
+1 2 4 7 11 16
+That's number 2.  Keep going!
+2 694
+Halfway there!
+108 2 DrEvil
+So you got that one.  Try this one.
+5 115
+Good work!  On to the next...
+4 1 2 5 6 3
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+36
+
+Breakpoint 1, 0x0000555555556e23 in explode_bomb ()
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 547] will be killed.
+
+Quit anyway? (y or n) y
+jovyan@jupyter-10225501447:~/lab2/bomb26$ 
